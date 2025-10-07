@@ -1,31 +1,23 @@
-import './App.css'
-import { TokenLaunchpad } from './components/TokenLaunchpad'
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import {
-  WalletModalProvider,
-  WalletDisconnectButton,
-  WalletMultiButton
-} from '@solana/wallet-adapter-react-ui';
-import '@solana/wallet-adapter-react-ui/styles.css';
+import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import { TokenLaunchpad } from './components/TokenLaunchpad'
+
+import './App.css';
+import '@solana/wallet-adapter-react-ui/styles.css'; // ✅ needed for wallet buttons
 
 function App() {
+  const endpoint = "https://solana-devnet.g.alchemy.com/v2/RWU7SfEV3OADb2pXtI5x0";
+
   return (
-    <ConnectionProvider endpoint="https://api.devnet.solana.com">
+    <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            padding: 20
-          }}>
-            <WalletMultiButton></WalletMultiButton>
-            <WalletDisconnectButton></WalletDisconnectButton>
-          </div>
-          <TokenLaunchpad></TokenLaunchpad>
+          <WalletMultiButton />
+          <TokenLaunchpad/>
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
-  )
+  );
 }
 
-export default App
+export default App;
