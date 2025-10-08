@@ -1,17 +1,12 @@
 
 export function TokenLaunchpad() {
-    return  <div style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column'
-    }}>
-        <h1>Solana Token Launchpad</h1>
-        <input className='inputText' type='text' placeholder='Name'></input> <br />
-        <input className='inputText' type='text' placeholder='Symbol'></input> <br />
-        <input className='inputText' type='text' placeholder='Image URL'></input> <br />
-        <input className='inputText' type='text' placeholder='Initial Supply'></input> <br />
-        <button className='btn'>Create a token</button>
+    return <div>
+        <input type="text" placeholder="Token Name" class="w-110 p-4 border mt-20 placeholder-gray-700 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></input><br />
+        <input type="text" placeholder="Symbol" class="w-110 p-4 border mt-10 placeholder-gray-700 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></input><br />
+        <input type="text" placeholder="Image Url" class="w-110 p-4 border mt-10 placeholder-gray-700 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></input><br />
+        <input type="text" placeholder="Token Name" class="w-110 p-4 border mt-10 placeholder-gray-700 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></input><br />
+
+        <button type="button" className="bg-green-500 mt-10 px-10 py-3 text-black-bold font-semibold font-sans">Create</button>
+
     </div>
 }
